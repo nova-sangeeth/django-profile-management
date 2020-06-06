@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile page</title>
+    </head>
+
+    <body>
+        {% block content %}
+
+        <div class="container">
+            <p class="display-4">{{user.username}} ,This is your profile page </p>
+        </div>
+
+        <div class="container" style="overflow: hidden;">
+            {% for items in data %}
+            <p class='lead' style="float: left;"> Name:</p>
+            <p class="lead">{{items.name}}</p>
+            <p class='lead' style="float: left;">Gender:</p>
+            <p class="lead">{{items.gender}}</p>
+            <p class='lead' style="float: left;">Marital Status:</p>
+            <p class="lead">{{items.marital_status}}</p>
+            <p class='lead' style="float: left;">Address:</p>
+            <p class="lead">{{items.address}}</p>
+            <p class='lead' style="float: left;">Phone Number:</p>
+            <p class="lead">{{items.phone}}</p>
+            <p class='lead' style="float: left;">Email:</p>
+            <p class="lead">{{items.email}}</p>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="container">
+            <a href="edit_profile" class="btn btn-primary">Click here to edit your
+                Profile.</a>
+        </div>
+        {% endblock content %}
+    </body>
+
+</html>
